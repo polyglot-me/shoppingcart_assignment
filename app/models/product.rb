@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   def self.find_cost_greater_than(max)
    self.where("cost > ?",max)
   end
+  
 
  
 
