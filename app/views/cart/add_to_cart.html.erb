@@ -1,0 +1,17 @@
+<div>
+  <h2>Cart Items</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>price</th>
+    </tr>
+ <% for item in @cart.items %>
+    <tr>
+  <td><%= item.name %></td>
+  <td><%= iteem.quantity %></td>
+  <td><%= item.price%> </td>
+   </tr>
+  <% end %>
+</table>
+</div>

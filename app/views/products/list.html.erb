@@ -1,0 +1,26 @@
+<div class="products list">
+  <h2>products</h2>
+
+  <table class="listing" summary="Product list" cellpadding="10" border=2 bordercolor="blue" bgcolor="yellow" align="center">
+    <tr class="header">
+      <th>Name</th>
+      <th>cost</th>
+      <th>quantity</th>
+    <%=  stylesheet_link_tag('public','products',:media =>'all') %>
+    </tr>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.cost %></td>
+      <td><%= product.quantity %></td>
+      <td><%= button_to "Add to Cart", "/cart/add_to_cart?id=#{product.id}" %></td>
+      <td class="actions">
+       
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+
+<%#= link_to("Add to cart", "/cart/add_to_cart/#{product.id}", {:id => "editdialog"} ) %>

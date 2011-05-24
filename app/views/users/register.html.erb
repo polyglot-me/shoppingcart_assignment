@@ -1,0 +1,34 @@
+  <h1>Registration Form</h1>
+  <style type="text/css">
+  body { background-color: azure; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+ form { color: #666; text-align: center; font-family: arial, sans-serif; }
+h6 {color: red; text-align: center;}
+     </style>
+   <fieldset>
+    
+      <% form_for :user, @user do |f| %>
+   
+     <% @user.errors.each do|msg| %>
+     <fontcolor="red"><%= msg %></font>
+      <br/>
+   <% end %>
+    name:*<%= f.text_field :name %><br/>
+Password:*<%= f.password_field :password %><br/>
+ Confirm:*<%= f.password_field :password_confirmation %><br/>
+  email:  <%= f.text_field :email %><br/>
+Contact Number: <%= f.text_field :contact_number %><br/>
+     
+     <%= submit_tag "Register Here!"  %>
+
+<% end %>
+
+   </fieldset>
+  <h6>  * fields are mandatory  </h6>

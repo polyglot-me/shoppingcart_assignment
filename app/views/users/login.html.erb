@@ -1,0 +1,32 @@
+<h1>User Login </h1>
+  <style type="text/css">
+  body { background-color: azure; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+     </style>
+    <div class=" Login">
+<% form_tag do %>
+<fieldset>
+<h1>Please enter your credentials</h1>
+<div>
+<label for="name">Name:</label>
+<%= text_field_tag :name, params[:name] %>
+</div>
+<div>
+<label for="password">Password:</label>
+<%= password_field_tag :password, params[:password] %>
+</div>
+<div>
+<%= submit_tag "Login" %>
+<%=link_to("Register Here",{:action=>'register'}) %>
+</div>
+</fieldset>
+<% end %>
+</div>
+

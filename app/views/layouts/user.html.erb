@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>'User' | <%= @page_title  %></title>
+    <meta name="author" content="Kevin Skoglund"/>
+    <%= stylesheet_link_tag('public', 'user', :media => 'all') %>
+    <%#= javascript_include_tag('application') %>
+   <%=link_to("Logout",{:action=>'login'}) %>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Shopping World</h1>
+      
+    </div>
+    <div id="main">
+      <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
